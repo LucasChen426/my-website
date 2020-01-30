@@ -14,6 +14,12 @@ const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
     },
+    bar: {
+        background: 'transparent',
+        position: 'absolute',
+        top: theme.spacing(1),
+        boxShadow: 'none'
+    },
     menuButton: {
         marginRight: theme.spacing(2),
     },
@@ -24,7 +30,7 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         alignItems: 'center',
         '& > *': {
-            margin: theme.spacing(1),
+            margin: theme.spacing(2),
         },
         fontFamily: 'Arial',
         fontSize: 20
@@ -36,7 +42,7 @@ function ButtonAppBar() {
     const preventDefault = event => event.preventDefault();
     return (
         <div className={classes.root}>
-            <AppBar position="static" color="inherit">
+            <AppBar position="static" color="inherit" className={classes.bar}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <HomeIcon />
